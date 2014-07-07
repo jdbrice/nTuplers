@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+	
+	<job maxFilesPerProcess="1" filesPerHour="2">
+
+	<command>
+		starver SL14a
+		pwd
+
+		root4star -b -q nTuple.C\(\"$FILELIST\",\"$JOBID.ntuple.root\"\) &gt;&amp; ${JOBID}.log
+		
+	</command>
+
+	<stdout URL="file:/star/u/jdb/sirjdb/nTuplers/particleId/data/log/$JOBID.out" />
+	
+	<stderr URL="file:/star/u/jdb/sirjdb/nTuplers/particleId/data/log/$JOBID.err" />
+	
+	<input URL="file:/star/data*/reco/AuAu_200_production_high_2014/ReversedFullField/P14ic/2014/088/*/*.MuDst.root"/>
+
+	    <output fromScratch="*" toURL="file:/star/u/jdb/sirjdb/nTuplers/particleId/data/output/" />
+
+		<SandBox>
+		
+			<Package>
+				<File>file:./nTuple.C</File>
+				<File>file:./.sl64_gcc447/</File>
+			</Package>
+
+		</SandBox>
+
+		<Generator>
+			<Location>/star/u/jdb/sirjdb/nTuplers/particleId/data/generator</Location>
+		</Generator>
+		
+	</job>
+
