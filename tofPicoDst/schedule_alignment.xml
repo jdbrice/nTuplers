@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<job maxFilesPerProcess="1" filesPerHour="2">
+	<command>
+		starver SL14d
+ 		pwd
+		root4star -b -q alignment.C\(\"detp geometry ry2014a\", \"$FILELIST\",\"$JOBID.ntuple.root\"\) &gt;&amp; ${JOBID}.log
+	</command>
+
+	<stdout URL="file:/star/institutions/rice/jdb/run14/auau15/rcp/data/log/$JOBID.out" />
+	
+	<stderr URL="file:/star/institutions/rice/jdb/run14/auau15/rcp/data/log/$JOBID.err" />
+	
+	<input URL="filelist:/star/u/jdb/work/nTuplers/vpdStartTimeCalibration/flist.lis"/>
+
+	    <output fromScratch="*" toURL="file:/star/institutions/rice/jdb/run14/auau15/rcp/data/output/" />
+
+	<SandBox>
+ 		<Package>
+ 			<File>file:./alignment.C</File> 
+ 			<File>file:./.sl64_gcc447/</File> 
+ 		</Package> 
+ 	</SandBox>
+
+	<Generator> 
+ 		<Location>/star/institutions/rice/jdb/run14/auau15/rcp/data/generator</Location> 
+ 	</Generator> 
+</job>
