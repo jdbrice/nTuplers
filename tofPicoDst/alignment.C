@@ -10,15 +10,15 @@ void loadLibs();
 void alignment(const Char_t * geomTag = "detp geometry ry2014a" , const Char_t *fileList = "test.lis",
                    const Char_t *ntuplename = "testing.ntuple.root")
 {
-  //ry2014a
+
   StChain  *chain = 0;
   St_db_Maker *dbMk = 0;
 
-  Int_t iEvt = 0, istat = 0, nEvents = 0;
+  Int_t iEvt = 0, istat = 0;
 
 
-  Int_t nEvents = 1000000;//1000; //1000000;
-  Int_t nfiles = 1000;
+  Int_t nEvents = 1000000;
+  Int_t nfiles = 10000;
 
   //
   // First load some shared libraries we need
